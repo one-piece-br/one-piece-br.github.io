@@ -1,4 +1,4 @@
-var $cell = document.getElementById('.card');
+var $cell = '.card');
 
 //open and close card when clicked on card
 $cell.find('.js-expander').click(function() {
