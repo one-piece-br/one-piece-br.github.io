@@ -2100,10 +2100,10 @@ ol {
 	}
 	.footer__logo {
 		text-align: center;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 	}
 	.footer__nav {
-		margin-bottom: 15px;
+		margin-bottom: 5px;
 	}
 	.footer__copyright__text {
 		text-align: center;
@@ -2205,10 +2205,10 @@ ol {
 	}
 	.footer__logo {
 		text-align: center;
-		margin-bottom: 20px;
+		margin-bottom: 10px;
 	}
 	.footer__nav {
-		margin-bottom: 15px;
+		margin-bottom: 5px;
 	}
 	.footer__copyright__text {
 		text-align: center;
@@ -2289,7 +2289,7 @@ ol {
 		font-size: 32px;
 	}
 	.footer__nav ul li {
-		margin-right: 10px;
+		margin-right: 5px;
 	}
 	.anime__details__btn .follow-btn {
 		padding: 14px 26px;
