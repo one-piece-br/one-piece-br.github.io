@@ -1198,13 +1198,23 @@ ol {
 }
 /* 90% da largura da tela. Se achar que é muito,
 pode diminuir para o valor que achar melhor */
-/* .modal-dialog{
+.modal-dialog{
 	min-width: 50vw;
-	overflow: scroll;
 }
 .modal-content {
-	height: 95%;
-} */
+	height: 100%;
+	position: relative;
+	margin: 0 auto;
+	padding: 3rem;
+	overflow-y: scroll;
+	-webkit-overflow-scrolling: touch;
+	object,
+	div {
+		border: none;
+		width: 100%;
+		height: 100%;
+	}
+}
 .anime__video__player .plyr--full-ui.plyr--video .plyr__control--overlaid {
 	display: block;
 }
