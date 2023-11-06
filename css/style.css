@@ -1196,7 +1196,14 @@ ol {
 .anime__video__player .plyr video {
 	width: 102%;
 }
-
+/* 90% da largura da tela. Se achar que é muito,
+pode diminuir para o valor que achar melhor */
+.modal-dialog{
+	min-width: 90vw;
+}
+.modal-content {
+	height: 100%;
+}
 .anime__video__player .plyr--full-ui.plyr--video .plyr__control--overlaid {
 	display: block;
 }
