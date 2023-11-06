@@ -1202,16 +1202,7 @@ pode diminuir para o valor que achar melhor */
 	min-width: 50vw;
 }
 .modal-content {
-	height: 100%;
-	position: relative;
-	overflow-y: scroll;
-	-webkit-overflow-scrolling: touch;
-	object,
-	div {
-		border: none;
-		width: 100%;
-		height: 100%;
-	}
+	height: 95%;
 }
 .anime__video__player .plyr--full-ui.plyr--video .plyr__control--overlaid {
 	display: block;
