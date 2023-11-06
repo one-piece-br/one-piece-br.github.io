@@ -1203,6 +1203,7 @@ pode diminuir para o valor que achar melhor */
 }
 .modal-content {
 	height: 95%;
+	overflow: scroll;
 }
 .anime__video__player .plyr--full-ui.plyr--video .plyr__control--overlaid {
 	display: block;
@@ -2107,8 +2108,7 @@ pode diminuir para o valor que achar melhor */
 	}
 
 	.modal-content {
-		height: 55%;
-		overflow: scroll;
+		height: 5%;
 	}
 	.footer{
 		position: relative;
@@ -2218,11 +2218,6 @@ pode diminuir para o valor que achar melhor */
 	.product__sidebar {
 		padding-top: 50px;
 	}
-
-	.modal-content {
-		height: 55%;
-		overflow: scroll;
-	}
 	.footer{
 		position: relative;
 	}
@@ -2310,11 +2305,6 @@ pode diminuir para o valor que achar melhor */
 	}
 	.hero__text h2 {
 		font-size: 32px;
-	}
-
-	.modal-content {
-		height: 55%;
-		overflow: scroll;
 	}
 	.footer{
 		position: relative;
