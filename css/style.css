@@ -2107,7 +2107,7 @@ pode diminuir para o valor que achar melhor */
 	}
 
 	.modal-content {
-		height: 5%;
+		height: 55%;
 	}
 	.footer{
 		position: relative;
@@ -2217,6 +2217,9 @@ pode diminuir para o valor que achar melhor */
 	.product__sidebar {
 		padding-top: 50px;
 	}
+	.modal-content {
+		height: 55%;
+	}
 	.footer{
 		position: relative;
 	}
@@ -2304,6 +2307,9 @@ pode diminuir para o valor que achar melhor */
 	}
 	.hero__text h2 {
 		font-size: 32px;
+	}
+	.modal-content {
+		height: 55%;
 	}
 	.footer{
 		position: relative;
