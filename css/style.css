@@ -1204,8 +1204,6 @@ pode diminuir para o valor que achar melhor */
 .modal-content {
 	height: 100%;
 	position: relative;
-	margin: 0 auto;
-	padding: 3rem;
 	overflow-y: scroll;
 	-webkit-overflow-scrolling: touch;
 	object,
