@@ -1200,6 +1200,7 @@ ol {
 pode diminuir para o valor que achar melhor */
 .modal-dialog{
 	min-width: 50vw;
+	overflow: scroll;
 }
 .modal-content {
 	height: 95%;
