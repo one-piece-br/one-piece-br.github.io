@@ -99,3 +99,75 @@
      });
 
 })(jQuery);
+
+
+
+const mangaImages = ["./cap/1096/Capitulo-1096-kumachi/0.webp", "./cap/1096/Capitulo-1096-kumachi/1.webp", "./cap/1096/Capitulo-1096-kumachi/2-3.webp",
+"./cap/1096/Capitulo-1096-kumachi/4.webp", "./cap/1096/Capitulo-1096-kumachi/5.webp"]; // Adicione os URLs das páginas do seu mangá aqui
+let currentPage = 0;
+        let zoomedIn = false;
+        const mangaImage = document.getElementById("mangaImage");
+        const prevButton = document.getElementById("prevButton");
+        const nextButton = document.getElementById("nextButton");
+
+        // Função para mostrar a página atual
+        function showPage(pageNumber) {
+            mangaImage.src = mangaImages[pageNumber];
+            currentPage = pageNumber;
+            resetZoom();
+            updateButtonStates();
+        }
+
+        // Função para aplicar zoom na imagem
+        function toggleZoom() {
+            if (zoomedIn) {
+                resetZoom();
+            } else {
+                mangaImage.style.transform = "scale(2)";
+                zoomedIn = true;
+            }
+        }
+
+        // Função para redefinir o zoom
+        function resetZoom() {
+            mangaImage.style.transform = "scale(1)";
+            zoomedIn = false;
+        }
+
+        // Event listener para abrir o modal e mostrar a primeira página
+        $('#mangaModal').on('show.bs.modal', function () {
+            showPage(0);
+        });
+
+        // Event listener para navegar para a página anterior
+        prevButton.addEventListener("click", function () {
+            if (currentPage > 0) {
+                showPage(currentPage - 1);
+            }
+        });
+
+        // Event listener para navegar para a próxima página
+        nextButton.addEventListener("click", function () {
+            if (currentPage < mangaImages.length - 1) {
+                showPage(currentPage + 1);
+            }
+        });
+
+        // Event listener para usar as setas do teclado
+        document.addEventListener("keydown", function (e) {
+            if (e.key === "ArrowLeft") {
+                if (currentPage > 0) {
+                    showPage(currentPage - 1);
+                }
+            } else if (e.key === "ArrowRight") {
+                if (currentPage < mangaImages.length - 1) {
+                    showPage(currentPage + 1);
+                }
+            }
+        });
+
+        // Função para atualizar o estado dos botões de navegação
+        function updateButtonStates() {
+            prevButton.disabled = (currentPage === 0);
+            nextButton.disabled = (currentPage === mangaImages.length - 1);
+        }

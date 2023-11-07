@@ -1198,11 +1198,36 @@ ol {
 }
 /* 90% da largura da tela. Se achar que é muito,
 pode diminuir para o valor que achar melhor */
-.modal-dialog{
-	min-width: 50vw;
-}
+/* Personalização do modal */
 .modal-content {
-	height: 95%;
+	background: transparent;
+	border: none;
+	box-shadow: none;
+}
+
+.modal-dialog {
+	max-width: 100%;
+	width: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.modal-body {
+	padding: 0;
+}
+
+.manga-img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+	margin: 0 auto;
+	cursor: zoom-in;
+	transition: transform 0.3s;
+}
+
+.modal-open .manga-img {
+	cursor: zoom-out;
 }
 .anime__video__player .plyr--full-ui.plyr--video .plyr__control--overlaid {
 	display: block;
@@ -2107,7 +2132,7 @@ pode diminuir para o valor que achar melhor */
 	}
 
 	.modal-content {
-		height: 55%;
+		height: 5%;
 	}
 	.footer{
 		position: relative;
@@ -2217,9 +2242,6 @@ pode diminuir para o valor que achar melhor */
 	.product__sidebar {
 		padding-top: 50px;
 	}
-	.modal-content {
-		height: 55%;
-	}
 	.footer{
 		position: relative;
 	}
@@ -2307,9 +2329,6 @@ pode diminuir para o valor que achar melhor */
 	}
 	.hero__text h2 {
 		font-size: 32px;
-	}
-	.modal-content {
-		height: 55%;
 	}
 	.footer{
 		position: relative;
