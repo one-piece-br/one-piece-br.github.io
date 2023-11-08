@@ -1198,36 +1198,30 @@ ol {
 }
 /* 90% da largura da tela. Se achar que é muito,
 pode diminuir para o valor que achar melhor */
-/* Personalização do modal */
-.modal-content {
-	background: transparent;
-	border: none;
-	box-shadow: none;
+#mangaModal .modal-content {
+	border: 2px solid #000;
+	border-radius: 5px;
+	box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
 }
 
-.modal-dialog {
-	max-width: 100%;
-	width: auto;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+#mangaModal .modal-header {
+	border-bottom: 2px solid #000;
 }
 
-.modal-body {
+#mangaModal .modal-title {
+	font-size: 24px;
+	font-weight: bold;
+}
+
+#mangaModal .modal-body {
+	text-align: center;
 	padding: 0;
 }
 
-.manga-img {
-	max-width: 100%;
+#mangaImage {
+	width: 100%;
 	height: auto;
-	display: block;
-	margin: 0 auto;
-	cursor: zoom-in;
-	transition: transform 0.3s;
-}
-
-.modal-open .manga-img {
-	cursor: zoom-out;
+	cursor: pointer;
 }
 .anime__video__player .plyr--full-ui.plyr--video .plyr__control--overlaid {
 	display: block;

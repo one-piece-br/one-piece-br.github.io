@@ -104,70 +104,78 @@
 
 const mangaImages = ["./cap/1096/Capitulo-1096-kumachi/0.webp", "./cap/1096/Capitulo-1096-kumachi/1.webp", "./cap/1096/Capitulo-1096-kumachi/2-3.webp",
 "./cap/1096/Capitulo-1096-kumachi/4.webp", "./cap/1096/Capitulo-1096-kumachi/5.webp"]; // Adicione os URLs das páginas do seu mangá aqui
-let currentPage = 0;
-        let zoomedIn = false;
-        const mangaImage = document.getElementById("mangaImage");
-        const prevButton = document.getElementById("prevButton");
-        const nextButton = document.getElementById("nextButton");
+let paginaAtual = 0;
+$(document).ready(function() {
+    // Carregar a lista de imagens do mangá
+    var mangaImages = ["./cap/1096/Capitulo-1096-kumachi/0.webp", "./cap/1096/Capitulo-1096-kumachi/1.webp", "./cap/1096/Capitulo-1096-kumachi/2-3.webp",
+    "./cap/1096/Capitulo-1096-kumachi/4.webp", "./cap/1096/Capitulo-1096-kumachi/5.webp"];
+    
+    var currentImageIndex = 0;
 
-        // Função para mostrar a página atual
-        function showPage(pageNumber) {
-            mangaImage.src = mangaImages[pageNumber];
-            currentPage = pageNumber;
-            resetZoom();
-            updateButtonStates();
+    function loadMangaImage() {
+        $('#mangaImage').attr('src', mangaImages[currentImageIndex]);
+    }
+
+    $('#mangaModal').on('shown.bs.modal', function() {
+        loadMangaImage();
+    });
+
+    $('#mangaModal').on('hidden.bs.modal', function() {
+        // Limpar a imagem ao fechar o modal
+        $('#mangaImage').attr('src', '');
+    });
+
+    $('#mangaModal').click(function() {
+        // Fechar o modal ao clicar fora da imagem
+        if (event.target === this) {
+            // Fecha o modal se o usuário clicar fora da imagem
+            $('#mangaModal').modal('hide');
         }
+    });
 
-        // Função para aplicar zoom na imagem
-        function toggleZoom() {
-            if (zoomedIn) {
-                resetZoom();
-            } else {
-                mangaImage.style.transform = "scale(2)";
-                zoomedIn = true;
-            }
-        }
-
-        // Função para redefinir o zoom
-        function resetZoom() {
-            mangaImage.style.transform = "scale(1)";
-            zoomedIn = false;
-        }
-
-        // Event listener para abrir o modal e mostrar a primeira página
-        $('#mangaModal').on('show.bs.modal', function () {
-            showPage(0);
-        });
-
-        // Event listener para navegar para a página anterior
-        prevButton.addEventListener("click", function () {
-            if (currentPage > 0) {
-                showPage(currentPage - 1);
-            }
-        });
-
-        // Event listener para navegar para a próxima página
-        nextButton.addEventListener("click", function () {
-            if (currentPage < mangaImages.length - 1) {
-                showPage(currentPage + 1);
-            }
-        });
-
-        // Event listener para usar as setas do teclado
-        document.addEventListener("keydown", function (e) {
-            if (e.key === "ArrowLeft") {
-                if (currentPage > 0) {
-                    showPage(currentPage - 1);
+    $(document).keydown(function(e) {
+        // Verificar as teclas pressionadas (A e D para navegar, setas para navegar)
+        if ($('#mangaModal').is(':visible')) {
+            if (e.keyCode === 65) { // Tecla "A" para voltar
+                if (currentImageIndex > 0) {
+                    currentImageIndex--;
+                    loadMangaImage();
                 }
-            } else if (e.key === "ArrowRight") {
-                if (currentPage < mangaImages.length - 1) {
-                    showPage(currentPage + 1);
+            } else if (e.keyCode === 68) { // Tecla "D" para avançar
+                if (currentImageIndex < mangaImages.length - 1) {
+                    currentImageIndex++;
+                    loadMangaImage();
+                }
+            } else if (e.keyCode === 37) { // Seta esquerda para voltar
+                if (currentImageIndex > 0) {
+                    currentImageIndex--;
+                    loadMangaImage();
+                }
+            } else if (e.keyCode === 39) { // Seta direita para avançar
+                if (currentImageIndex < mangaImages.length - 1) {
+                    currentImageIndex++;
+                    loadMangaImage();
                 }
             }
-        });
-
-        // Função para atualizar o estado dos botões de navegação
-        function updateButtonStates() {
-            prevButton.disabled = (currentPage === 0);
-            nextButton.disabled = (currentPage === mangaImages.length - 1);
         }
+    });
+
+    $('#mangaImage').click(function(e) {
+        var imageWidth = $('#mangaImage').width();
+        var clickX = e.pageX - $(this).offset().left;
+
+        if (clickX < imageWidth / 2) {
+            // Clicou na parte esquerda da imagem (volta)
+            if (currentImageIndex > 0) {
+                currentImageIndex--;
+                loadMangaImage();
+            }
+        } else {
+            // Clicou na parte direita da imagem (avança)
+            if (currentImageIndex < mangaImages.length - 1) {
+                currentImageIndex++;
+                loadMangaImage();
+            }
+        }
+    });
+});

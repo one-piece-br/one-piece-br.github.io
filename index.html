@@ -16,6 +16,8 @@
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
     <link rel="stylesheet" href="css/font-awesome.min.css" type="text/css">
     <link rel="stylesheet" href="css/elegant-icons.css" type="text/css">
@@ -92,8 +94,21 @@
                                         <div class="view"><a
                                                 href="./manga/pt/capitulo-1096/One Piece 1096 @One_Piece_Brasil.pdf"
                                                 class="primary-btn">pt</a></div>
-                                        <div class="view"><a type="button" class="primary-btn" data-toggle="modal" data-target="#mangaModal">pt</a></div>
+                                        <div class="view"><a type="button" class="primary-btn" data-toggle="modal" data-target="#mangaModal" data-dismiss="modal">pt</a></div>
                                     </div>
+                                    
+                                </div>
+                                <div class="product__item">
+                                    <div class="product__item__pic set-bg" data-setbg="./assets/1096/0.jpg">
+                                        <div class="comment"><a
+                                                href="./manga/eng/chapter-1096/chapter_1096_ kumachi_english.pdf"
+                                                class="primary-btn">eng</a></div>
+                                        <div class="view"><a
+                                                href="./manga/pt/capitulo-1096/One Piece 1096 @One_Piece_Brasil.pdf"
+                                                class="primary-btn">pt</a></div>
+                                        <div class="view"><a type="button" class="primary-btn" data-toggle="modal" data-target="#mangaModal" data-dismiss="modal">pt</a></div>
+                                    </div>
+                                    
                                 </div>
                             </div>
 
@@ -103,21 +118,22 @@
             </div>
         </div>
     </section>
-    <!-- Modal -->
     <div class="modal fade" id="mangaModal" tabindex="-1" role="dialog" aria-labelledby="mangaModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
-                <div class="modal-body">
-                    <img class="manga-img" id="mangaImage" src="pagina1.jpg">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="mangaModalLabel">Título do Capítulo</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" id="prevButton">Página Anterior</button>
-                    <button type="button" class="btn btn-secondary" id="nextButton">Próxima Página</button>
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                <div class="modal-body">
+                    <img id="mangaImage" class="img-fluid" src="" alt="Página do Manga">
                 </div>
             </div>
         </div>
     </div>
+</body>
     <!-- Modal -->
     <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
@@ -204,6 +220,8 @@
     <script src="js/jquery.slicknav.js"></script>
     <script src="js/owl.carousel.min.js"></script>
     <script src="js/main.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
 
     <!-- Inclua a biblioteca Bootstrap JavaScript no final do corpo para funcionalidade completa -->
