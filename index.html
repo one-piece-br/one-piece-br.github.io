@@ -49,11 +49,16 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li><a href="#">Mangá</a></li>
+                                <li><a href="./lista-manga.html">Mangá</a></li>
                                 <li><a href="#">SBS</a></li>
                                 <li><a href="#">Teorias</a></li>
                             </ul>
                         </nav>
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="header__right">
+                        <a href="./login.html" hidden="true"><span class="icon_profile"></span></a>
                     </div>
                 </div>
                 <div class="col-lg-2">
@@ -80,37 +85,11 @@
                             </div>
                             <div class="col-lg-4 col-md-4 col-sm-4">
                                 <div class="btn__all">
-                                    <a href="#" class="primary-btn">View All <span class="arrow_right"></span></a>
+                                    <a href="./lista-manga.html" class="primary-btn">View All <span class="arrow_right"></span></a>
                                 </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-lg-4 col-md-6 col-sm-6">
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="./assets/1096/0.jpg">
-                                        <div class="comment"><a
-                                                href="./manga/eng/chapter-1096/chapter_1096_ kumachi_english.pdf"
-                                                class="primary-btn">eng</a></div>
-                                        <div class="view"><a
-                                                href="./manga/pt/capitulo-1096/One Piece 1096 @One_Piece_Brasil.pdf"
-                                                class="primary-btn">pt</a></div>
-                                        <div class="view"><a type="button" class="primary-btn" data-toggle="modal" data-target="#mangaModal" data-dismiss="modal">pt</a></div>
-                                    </div>
-                                    
-                                </div>
-                                <div class="product__item">
-                                    <div class="product__item__pic set-bg" data-setbg="./assets/1096/0.jpg">
-                                        <div class="comment"><a
-                                                href="./manga/eng/chapter-1096/chapter_1096_ kumachi_english.pdf"
-                                                class="primary-btn">eng</a></div>
-                                        <div class="view"><a
-                                                href="./manga/pt/capitulo-1096/One Piece 1096 @One_Piece_Brasil.pdf"
-                                                class="primary-btn">pt</a></div>
-                                        <div class="view"><a type="button" class="primary-btn" data-toggle="modal" data-target="#mangaModal" data-dismiss="modal">pt</a></div>
-                                    </div>
-                                    
-                                </div>
-                            </div>
+                        <div class="row" id="cards-cap">
 
                         </div>
                     </div>
@@ -118,11 +97,12 @@
             </div>
         </div>
     </section>
-    <div class="modal fade" id="mangaModal" tabindex="-1" role="dialog" aria-labelledby="mangaModalLabel" aria-hidden="true">
+    <div class="modal fade" id="mangaModal" tabindex="-1" role="dialog" aria-labelledby="mangaModalLabel"
+        aria-hidden="true">
         <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="mangaModalLabel">Título do Capítulo</h5>
+                    <h5 class="modal-title" id="mangaModalLabel"></h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Fechar">
                         <span aria-hidden="true">&times;</span>
                     </button>
@@ -133,35 +113,6 @@
             </div>
         </div>
     </div>
-</body>
-    <!-- Modal -->
-    <!-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-            <div class="modal-content">
-                <div class="modal-body">
-                    <div id="manga-container">
-                        <img id="manga-image">
-                    </div>
-                
-                    <div id="navigation">
-                        <button onclick="previousPage()">Página Anterior</button>
-                        <button onclick="nextPage()" id="nextButton">Próxima Página</button>
-                    </div>
-                
-                    <div id="zoom-controls">
-                        <button class="zoom-btn" onclick="zoomIn()">Zoom +</button>
-                        <button class="zoom-btn" onclick="zoomOut()">Zoom -</button>
-                    </div>
-                </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                </div>
-            </div>
-        </div>
-    </div> -->
-    
-    <!-- Product Section End -->
-
     <!-- Footer Section Begin -->
     <footer class="footer">
         <div class="page-up">
@@ -170,20 +121,7 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-3">
-                    <!-- <div class="footer__logo">
-                    <a href="./index.html"><img src="img/logo.png" alt=""></a>
-                </div> -->
                 </div>
-                <!-- <div class="col-lg-6">
-                <div class="footer__nav">
-                    <ul>
-                        <li class="active"><a href="./index.html">Homepage</a></li>
-                        <li><a href="./categories.html">Categories</a></li>
-                        <li><a href="./blog.html">Our Blog</a></li>
-                        <li><a href="#">Contacts</a></li>
-                    </ul>
-                </div>
-            </div> -->
                 <div class="col-lg-6">
                     <div class="footer__nav">
                         <p><!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
@@ -200,18 +138,15 @@
     </footer>
     <!-- Footer Section End -->
 
-    <!-- Search model Begin -->
-    <div class="search-model">
-        <div class="h-100 d-flex align-items-center justify-content-center">
-            <div class="search-close-switch"><i class="icon_close"></i></div>
-            <form class="search-model-form">
-                <input type="text" id="search-input" placeholder="Search here.....">
-            </form>
-        </div>
-    </div>
-    <!-- Search model end -->
-
     <!-- Js Plugins -->
+
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-database-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.1.2/firebase-storage-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js"></script>
+    
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="js/player.js"></script>
