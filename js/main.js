@@ -442,7 +442,6 @@ function handleHashChange() {
         checkUserLogin(urlInput);
     }
     if(urlInput == 'lista-manga.html') {
-        listarTodosDadosDoFirebase();
     }
 
 }
@@ -464,4 +463,5 @@ function mostrarFormulario(tipo) {
 window.addEventListener('hashchange', handleHashChange());
 
 // Chame a função para listar dados ao carregar a página
-window.onload = listarDadosDoFirebase();
+window.onload = listarDadosDoFirebase(), 
+listarTodosDadosDoFirebase();
